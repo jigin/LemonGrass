@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#35403a3a">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="We Care For Your Feedback"
+            android:textColor="#ffffff"
+            android:textSize="35sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="7">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp" />
+
+            <EditText
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/whitebar"
+                android:hint="Your Name *"
+                android:paddingLeft="30dp"
+                android:textColorHint="#8e8d8d"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Mobile Number"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/whitebar"
+                android:hint="Your Number *"
+                android:paddingLeft="30dp"
+                android:textColorHint="#8e8d8d"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Email"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/whitebar"
+                android:hint="Your Email *"
+                android:paddingLeft="30dp"
+                android:textColorHint="#8e8d8d"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Date of Visit"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/whitebar"
+                android:hint="DD/MM/YYYY *"
+                android:paddingLeft="30dp"
+                android:textColorHint="#8e8d8d"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Name Of Outlet"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/whitebar"
+                android:hint="Your Name *"
+                android:paddingLeft="30dp"
+                android:textColorHint="#8e8d8d"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Time Of Visit"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:weightSum="6">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:button="@drawable/custom_checkbox"
+                    android:layout_height="wrap_content"
+                    android:text="Lunch"
+                    android:padding="5dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="15dp"
+                    android:textSize="25sp"
+                    android:textColor="#8e8d8d"
+                   />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:button="@drawable/custom_checkbox"
+                    android:layout_height="wrap_content"
+                    android:text="Dinner"
+                    android:layout_weight="1"
+                    android:paddingLeft="15dp"
+                    android:textSize="25sp"
+                    android:textColor="#8e8d8d"
+                    />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:button="@drawable/custom_checkbox"
+                    android:layout_height="wrap_content"
+                    android:text="Dine In"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:textSize="30sp"
+                    android:textColor="#8e8d8d"
+                    />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:button="@drawable/custom_checkbox"
+                    android:layout_height="wrap_content"
+                    android:text="Take away"
+                    android:layout_weight="1"
+                    android:paddingLeft="15dp"
+                    android:textSize="25sp"
+                    android:textColor="#8e8d8d"
+                    />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:button="@drawable/custom_checkbox"
+                    android:layout_height="wrap_content"
+                    android:text="Delivery"
+                    android:layout_weight="1"
+                    android:paddingLeft="15dp"
+                    android:textSize="25sp"
+                    android:textColor="#8e8d8d"
+                    android:id="@+id/checkBox" />
+                <!-- <TextView
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="1"
+                     android:gravity="center"
+                     android:text="Lunch"
+                     android:textColor="@color/colorPrimary"
+                     android:textSize="30sp" />-->
+            </LinearLayout>
+
+        </LinearLayout>
+        <Button
+            android:text="Next"
+            android:background="@color/colorPrimary"
+            android:layout_width="200dp"
+            android:gravity="center"
+            android:id="@+id/review_next"
+            android:textSize="35sp"
+            android:textColor="#ffffff"
+            android:layout_weight=".75"
+            android:layout_gravity="center"
+            android:layout_height="0dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

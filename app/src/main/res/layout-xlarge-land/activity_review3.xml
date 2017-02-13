@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout  android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#35403a3a">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="We Care For Your Feedback"
+            android:textColor="#ffffff"
+            android:textSize="35sp" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="30dp"
+        android:weightSum="8">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Would You Recommend Us ?"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:weightSum="6">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:button="@drawable/custom_checkbox"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"
+                    android:padding="5dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="15dp"
+                    android:textSize="35sp"
+                    android:textColor="#8e8d8d"
+                    />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:button="@drawable/custom_checkbox"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:layout_weight="1"
+                    android:paddingLeft="15dp"
+                    android:textSize="35sp"
+                    android:textColor="#8e8d8d"
+                    />
+                </LinearLayout>
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="How Did You Hear From Us ?"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/whitebar"
+                android:hint="Your Name *"
+                android:paddingLeft="30dp"
+                android:textColorHint="#8e8d8d"
+                android:textSize="30sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:weightSum="5">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:paddingLeft="15dp"
+                android:gravity="left|center"
+                android:text="Anything to add?"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:background="@drawable/green"
+                android:padding="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textColorHint="#8e8d8d"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:gravity="left|center"
+                android:text="Would you like us to subscribe to our newsletter? Don't worry,your data is safe with us and only be used by our marketing team to share with you relevant information about our product and services."
+                android:textColor="#8e8d8d"
+                android:textSize="30sp" />
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="3">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:button="@drawable/custom_checkbox"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:padding="5dp"
+                android:layout_weight=".1"
+                android:paddingLeft="15dp"
+                android:textSize="35sp"
+                android:textColor="#8e8d8d"
+                />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:button="@drawable/custom_checkbox"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:layout_weight=".1"
+                android:paddingLeft="15dp"
+                android:textSize="35sp"
+                android:textColor="#8e8d8d"
+                />
+
+            <Button
+                android:text="Send"
+                android:background="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:textColor="#ffffff"
+                android:layout_weight=".5"
+                android:layout_height="60dp" />
+        </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

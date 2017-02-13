@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LemonGrass.iml" filepath="$PROJECT_DIR$/LemonGrass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lemongrass.iml" filepath="$PROJECT_DIR$/Lemongrass.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

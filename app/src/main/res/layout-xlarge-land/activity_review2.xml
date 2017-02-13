@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#35403a3a">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="We Care For Your Feedback"
+            android:textColor="#ffffff"
+            android:textSize="35sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="How was your Food"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textColor="@color/grey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="6">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@color/colorPrimary"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="30dp" />
+
+            <SeekBar
+                android:thumb="@drawable/seekbar_thumb"
+                android:progressDrawable="@color/red"
+                android:progressBackgroundTint="@android:color/white"
+                android:id="@+id/seekbar"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:layout_weight="4"
+                android:layout_width="0dp"
+                android:layout_height="20dp" />
+
+            <ImageView
+                android:layout_gravity="center"
+
+                android:background="@color/colorPrimary"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="450dp"
+    android:padding="8dp"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="450dp"
+        android:layout_height="250dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/menupageicons" />
+
+    <LinearLayout
+        android:id="@+id/ll_foodname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/imageView2">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+
+            android:padding="5dp"
+            android:text="Poh Pia Tod"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:maxLines="5"
+            android:padding="5dp"
+            android:text="Fried Mixed vegetables onrolled   served with sweet  in sauce.rolls saved with plum mixed spring."
+            android:textAlignment="gravity"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:layout_below="@+id/ll_foodname"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="AED 65"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+        <!-- <LinearLayout
+             android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:layout_weight="1"
+             android:weightSum="2"
+             android:orientation="horizontal">
+             &lt;!&ndash; <TextView
+                  android:text="درهم "
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:textSize="80sp"
+                  android:textColor="#ffffff"
+                  android:gravity="center"
+                  android:textStyle="bold" />&ndash;&gt;
+
+
+
+         </LinearLayout>-->
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
