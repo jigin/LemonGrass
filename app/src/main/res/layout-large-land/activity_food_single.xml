@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/loginbg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/itemSingleImage"
+                android:scaleType="centerCrop"
+                android:src="@drawable/menupageicons"
+                android:layout_width="380dp"
+                android:layout_height="380dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:gravity="center"
+                android:weightSum="5"
+                android:orientation="vertical"
+                android:layout_width="400dp"
+                android:layout_height="380dp">
+
+                <TextView
+                    android:gravity="left"
+                    android:id="@+id/itemTitle"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:text="VEGITABLE ROLLS"
+                    android:textSize="35dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_weight="3"
+                    android:text="Vegitable spring rolls marinated chicken in pandan leaf, glass noodle salad with minced chicken, prawn cake and chicken satay served with assorted dips. Vegitable spring rolls marinated in padan leaf."
+                    android:textSize="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/itemDesc" />
+                <TextView
+                    android:textStyle="italic"
+                    android:layout_weight="1"
+                    android:text="Roasted Duck 23 "
+                    android:textSize="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/itemNuti" />
+
+                <Button
+                    android:id="@+id/itemPrice"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_drawable"
+                    android:text="AED 245"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

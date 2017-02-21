@@ -21,7 +21,7 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            app:tabMode="fixed"
+            app:tabMode="scrollable"
             app:tabIndicatorColor="#ffffff"
             app:tabIndicatorHeight="5dp"
             android:background="#a8000000"

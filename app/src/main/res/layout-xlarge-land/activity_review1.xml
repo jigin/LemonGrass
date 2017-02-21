@@ -6,9 +6,18 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="@dimen/reviewTitle"
         android:background="#35403a3a">
+
+        <ImageView
+            android:id="@+id/fdBackicon"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/back_icon1"
+            android:gravity="center"
+            android:layout_width="40dp"
+            android:layout_height="match_parent" />
 
         <TextView
             android:layout_width="match_parent"
@@ -16,258 +25,288 @@
             android:gravity="center"
             android:text="We Care For Your Feedback"
             android:textColor="#ffffff"
-            android:textSize="35sp" />
+            android:textSize="@dimen/reviewTitleSize" />
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="7">
-
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            android:weightSum="3">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="7">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Name"
-                android:textColor="@color/colorPrimary"
-                android:textSize="30sp" />
-
-            <EditText
-
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:background="@drawable/whitebar"
-                android:hint="Your Name *"
-                android:paddingLeft="30dp"
-                android:textColorHint="#8e8d8d"
-                android:textSize="30sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            android:weightSum="3">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Mobile Number"
-                android:textColor="@color/colorPrimary"
-                android:textSize="30sp" />
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:background="@drawable/whitebar"
-                android:hint="Your Number *"
-                android:paddingLeft="30dp"
-                android:textColorHint="#8e8d8d"
-                android:textSize="30sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            android:weightSum="3">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Email"
-                android:textColor="@color/colorPrimary"
-                android:textSize="30sp" />
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:background="@drawable/whitebar"
-                android:hint="Your Email *"
-                android:paddingLeft="30dp"
-                android:textColorHint="#8e8d8d"
-                android:textSize="30sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            android:weightSum="3">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Date of Visit"
-                android:textColor="@color/colorPrimary"
-                android:textSize="30sp" />
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:background="@drawable/whitebar"
-                android:hint="DD/MM/YYYY *"
-                android:paddingLeft="30dp"
-                android:textColorHint="#8e8d8d"
-                android:textSize="30sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            android:weightSum="3">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Name Of Outlet"
-                android:textColor="@color/colorPrimary"
-                android:textSize="30sp" />
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:background="@drawable/whitebar"
-                android:hint="Your Name *"
-                android:paddingLeft="30dp"
-                android:textColorHint="#8e8d8d"
-                android:textSize="30sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            android:weightSum="3">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Time Of Visit"
-                android:textColor="@color/colorPrimary"
-                android:textSize="30sp" />
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal"
-                android:weightSum="6">
+                android:padding="10dp"
+                android:weightSum="3">
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:button="@drawable/custom_checkbox"
-                    android:layout_height="wrap_content"
-                    android:text="Lunch"
-                    android:padding="5dp"
+                <TextView
+                    android:layout_marginLeft="25dp"
+                    android:gravity="left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingLeft="15dp"
-                    android:textSize="25sp"
-                    android:textColor="#8e8d8d"
-                   />
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:button="@drawable/custom_checkbox"
-                    android:layout_height="wrap_content"
-                    android:text="Dinner"
-                    android:layout_weight="1"
-                    android:paddingLeft="15dp"
-                    android:textSize="25sp"
-                    android:textColor="#8e8d8d"
-                    />
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:button="@drawable/custom_checkbox"
-                    android:layout_height="wrap_content"
-                    android:text="Dine In"
-                    android:layout_weight="1"
-                    android:paddingLeft="5dp"
-                    android:textSize="30sp"
-                    android:textColor="#8e8d8d"
-                    />
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:button="@drawable/custom_checkbox"
-                    android:layout_height="wrap_content"
-                    android:text="Take away"
-                    android:layout_weight="1"
-                    android:paddingLeft="15dp"
-                    android:textSize="25sp"
-                    android:textColor="#8e8d8d"
-                    />
+                    android:text="Name"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textSize" />
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:button="@drawable/custom_checkbox"
+                <EditText
+
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Delivery"
-                    android:layout_weight="1"
-                    android:paddingLeft="15dp"
-                    android:textSize="25sp"
-                    android:textColor="#8e8d8d"
-                    android:id="@+id/checkBox" />
-                <!-- <TextView
-                     android:layout_width="0dp"
-                     android:layout_height="match_parent"
-                     android:layout_weight="1"
-                     android:gravity="center"
-                     android:text="Lunch"
-                     android:textColor="@color/colorPrimary"
-                     android:textSize="30sp" />-->
+                    android:layout_weight="2"
+                    android:background="@drawable/whitebar"
+                    android:hint="Your Name *"
+                    android:paddingLeft="30dp"
+                    android:textColorHint="#8e8d8d"
+                    android:textSize="@dimen/textSize"
+                    android:id="@+id/r1name"
+                    android:inputType="textPersonName" />
             </LinearLayout>
 
-        </LinearLayout>
-        <Button
-            android:text="Next"
-            android:background="@color/colorPrimary"
-            android:layout_width="200dp"
-            android:gravity="center"
-            android:id="@+id/review_next"
-            android:textSize="35sp"
-            android:textColor="#ffffff"
-            android:layout_weight=".75"
-            android:layout_gravity="center"
-            android:layout_height="0dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="3">
 
-    </LinearLayout>
+                <TextView
+                    android:layout_marginLeft="25dp"
+                    android:gravity="left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Mobile number"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textSize" />
+
+                <EditText
+                    android:id="@+id/r1mobno"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/whitebar"
+                    android:hint="Your Mobile Number *"
+                    android:paddingLeft="30dp"
+                    android:textColorHint="#8e8d8d"
+                    android:textSize="@dimen/textSize"
+                    android:inputType="phone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_marginLeft="25dp"
+                    android:gravity="left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Email"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textSize" />
+
+                <EditText
+                    android:id="@+id/r1email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/whitebar"
+                    android:hint="Your Email *"
+                    android:paddingLeft="30dp"
+                    android:textColorHint="#8e8d8d"
+                    android:textSize="@dimen/textSize"
+                    android:inputType="textEmailAddress" />
+            </LinearLayout>
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_marginLeft="25dp"
+                    android:gravity="left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Date of Visit"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textSize" />
+
+                <TextView
+                    android:gravity="center_vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/whitebar"
+                    android:hint="DD/MM/YYYY *"
+                    android:paddingLeft="30dp"
+                    android:textColorHint="#8e8d8d"
+                    android:textSize="@dimen/textSize"
+                    android:id="@+id/r1date"/>
+
+            </LinearLayout>-->
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_marginLeft="25dp"
+                    android:gravity="left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Name of outlet"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textSize"
+                    android:id="@+id/textView7" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/whitebar"
+                    android:hint="Your Name *"
+                    android:paddingLeft="30dp"
+                    android:textColorHint="#8e8d8d"
+                    android:textSize="@dimen/textSize" />
+            </LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_marginLeft="25dp"
+                    android:gravity="left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Time of visit"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textSize"
+                    android:id="@+id/textView3" />
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:button="@drawable/custom_checkbox1"
+                        android:layout_height="wrap_content"
+                        android:text="Lunch"
+                        android:padding="5dp"
+                        android:layout_weight="1"
+                        android:paddingLeft="15dp"
+                        android:textSize="@dimen/textSize"
+                        android:textColor="#8e8d8d"
+                        android:id="@+id/r1_checkbox1" />
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:button="@drawable/custom_checkbox1"
+                        android:layout_height="wrap_content"
+                        android:text="Dinner"
+                        android:layout_weight="1"
+                        android:paddingLeft="15dp"
+                        android:textSize="@dimen/textSize"
+                        android:textColor="#8e8d8d"
+                        android:id="@+id/r1_checkbox2" />
+
+                    <!--<CheckBox
+                        android:layout_width="wrap_content"
+                        android:button="@drawable/custom_checkbox1"
+                        android:layout_height="wrap_content"
+                        android:text="Dine In"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                        android:textSize="@dimen/textSize"
+                        android:textColor="#8e8d8d"
+                        android:id="@+id/r1_checkbox3" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:button="@drawable/custom_checkbox1"
+                        android:layout_height="wrap_content"
+                        android:text="Take away"
+                        android:layout_weight="1"
+                        android:paddingLeft="15dp"
+                        android:textSize="@dimen/textSize"
+                        android:textColor="#8e8d8d"
+                        android:id="@+id/r1_checkbox4" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:button="@drawable/custom_checkbox1"
+                        android:layout_height="wrap_content"
+                        android:text="Delivery"
+                        android:layout_weight="1"
+                        android:paddingLeft="15dp"
+                        android:textSize="@dimen/textSize"
+                        android:textColor="#8e8d8d"
+                        android:id="@+id/r1_checkbox5" />-->
+                    <!-- <TextView
+                         android:layout_width="0dp"
+                         android:layout_height="match_parent"
+                         android:layout_weight="1"
+                         android:gravity="center"
+                         android:text="Lunch"
+                         android:textColor="@color/colorPrimary"
+                         android:textSize="30sp" />-->
+                </LinearLayout>
+
+            </LinearLayout>
+            <Button
+                android:layout_marginTop="10dp"
+                android:text="NEXT"
+                android:background="@drawable/button_drawable"
+                android:layout_width="300dp"
+                android:gravity="center"
+                android:id="@+id/review_next"
+                android:textSize="@dimen/textSize"
+                android:textColor="#ffffff"
+                android:layout_weight=".6"
+                android:layout_gravity="center"
+                android:layout_height="0dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </LinearLayout>

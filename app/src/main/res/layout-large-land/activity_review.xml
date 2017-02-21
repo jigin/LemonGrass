@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/reviewTitle"
+        android:background="#35403a3a">
+
+        <ImageView
+            android:id="@+id/fdBackicon"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/back_icon1"
+            android:gravity="center"
+            android:layout_width="40dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="We Care For Your Feedback"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/reviewTitleSize" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:weightSum="4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- first -->
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="How was your Food?"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/textSize" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="6">
+
+            <ImageView
+                android:id="@+id/img_sad1"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/smielygreysad" />
+
+            <SeekBar
+                android:id="@+id/seekbar1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/seekSize"
+                android:layout_gravity="center"
+                android:layout_weight="4"
+                android:progressDrawable="@drawable/progress"
+                android:thumb="@drawable/seekbar_thumb" />
+
+            <ImageView
+                android:id="@+id/img_happy1"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/smielygreyhappy" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- SECONT -->
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="How was our service?"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/textSize" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="6">
+
+            <ImageView
+                android:id="@+id/img_sad2"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/smielygreysad" />
+
+            <SeekBar
+                android:id="@+id/seekbar2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/seekSize"
+                android:layout_gravity="center"
+                android:layout_weight="4"
+                android:progressDrawable="@drawable/progress"
+                android:thumb="@drawable/seekbar_thumb" />
+
+            <ImageView
+                android:id="@+id/img_happy2"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/smielygreyhappy" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- THRID  -->
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="How did you like our ambience?"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/textSize" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="6">
+
+            <ImageView
+                android:id="@+id/img_sad3"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/smielygreysad" />
+
+            <SeekBar
+                android:id="@+id/seekbar3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/seekSize"
+                android:layout_gravity="center"
+                android:layout_weight="4"
+                android:progressDrawable="@drawable/progress"
+                android:thumb="@drawable/seekbar_thumb" />
+
+            <ImageView
+                android:id="@+id/img_happy3"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/smielygreyhappy" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/send_bt"
+        android:layout_weight=".5"
+        android:text="NEXT"
+        android:layout_gravity="center"
+        android:background="@drawable/button_drawable"
+        android:layout_width="250dp"
+        android:gravity="center"
+        android:textSize="@dimen/textSize"
+        android:textColor="#ffffff"
+        android:layout_height="0dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

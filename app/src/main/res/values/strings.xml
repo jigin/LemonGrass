@@ -1,5 +1,36 @@
 <resources>
-    <string name="app_name">LemonGrass</string>
+    <string name="app_name">Lemongrass Thai Restaurant</string>
 
     <string name="crash">Crash</string>
+
+    <string name="noNetwork">No network.please try later !</string>
+
+    <string name="menu">Menu</string>
+
+    <item name="item_click_support" type="id"/>
+
+    <string-array name="outlet">
+        <item>Select Outlet</item>
+        <item>Oud Metha</item>
+        <item>Al Ghurair Centre</item>
+        <item>Mushrif Mall</item>
+        <item>The Galleria Mall</item>
+        <item>Cascade Walk</item>
+    </string-array>
+
+    <string-array name="hearfrom">
+        <item>Select</item>
+        <item>Recommendation</item>
+        <item>Social Media</item>
+        <item>Google</item>
+        <item>Print Ads or Flyers</item>
+        <item>You are a regular</item>
+    </string-array>
+
+    <string name="wentwrong">Sorry something went wrong</string>
+
+    <string name="invalidUser">Username or Password do not exit!</string>
+
+    <string name="optionText">Sync Now</string>
+
 </resources>

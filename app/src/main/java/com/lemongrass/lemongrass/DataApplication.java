@@ -9,9 +9,7 @@ import org.acra.annotation.ReportsCrashes;
 @ReportsCrashes(mailTo = "android@webqua.com",
 		mode = ReportingInteractionMode.TOAST,
 		resToastText = R.string.crash)
-public class DataApplication extends Application{
-
-
+public class DataApplication extends Application {
 	@Override
 	public void onCreate() {
 		// The following line triggers the initialization of ACRA

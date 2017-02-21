@@ -7,4 +7,10 @@
     <color name="grey">#a4a1a1</color>
 
     <color name="red">#f50303</color>
+
+    <color name="trans">#99000000</color>
+
+    <color name="white">#FFF</color>
+
+    <color name="black">#000</color>
 </resources>

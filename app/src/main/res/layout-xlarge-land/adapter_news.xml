@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_gravity="center"
+    android:background="@drawable/news_drawable"
+    android:weightSum="6"
+    android:layout_width="450dp"
+    android:layout_height="150dp">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_gravity="center">
+            <TextView
+                android:gravity="center"
+                android:text="15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:gravity="center"
+                android:text="Feb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:gravity="center"
+                android:text="2017"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="2"
+        android:background="@color/colorPrimary"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+        <ImageView
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/menupageicons" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_margin="20dp"
+        android:layout_weight="3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textView10"
+            android:textAllCaps="true"
+            android:text="shortlisted in the abu dhabi time out 2016 awards"
+            android:maxLines="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:background="@drawable/button_drawable"
+            android:text="View More"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:text="Vegitable spring rolls marianated"
+            android:maxLines="2"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView10"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+
+</LinearLayout>

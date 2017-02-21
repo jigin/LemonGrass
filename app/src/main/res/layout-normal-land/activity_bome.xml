@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/menubg1"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/im_"
+            android:layout_marginTop="20dp"
+            android:layout_width="350dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logowhite" />
+
+        <!--<ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/imageView3"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/im_"
+            android:layout_toEndOf="@+id/im_"
+            app:srcCompat="@android:drawable/ic_menu_rotate" />-->
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="350dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="2.75">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1.3"
+                android:background="@color/trans"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/im_menu"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/icn1" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_menu"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight=".4"
+                android:textAllCaps="false"
+                android:background="@color/colorPrimary"
+                android:text="@string/menu"
+                android:textSize="28sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="350dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="2.75">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1.3"
+                android:background="@color/trans"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/im_offer"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/icn2" />
+
+            </LinearLayout>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/btn_news"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight=".4"
+                android:background="@color/colorPrimary"
+                android:text="News"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="350dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="2.75">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1.3"
+                android:background="@color/trans"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/im_review"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/icn3" />
+
+            </LinearLayout>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/btn_review"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight=".4"
+                android:background="@color/colorPrimary"
+                android:text="Review"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="350dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="2.75">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1.3"
+                android:background="@color/trans"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/im_suscribe"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/icn4" />
+
+            </LinearLayout>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/btn_suscribe"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight=".4"
+                android:background="@color/colorPrimary"
+                android:text="Subcribe"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
