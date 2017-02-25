@@ -2,20 +2,16 @@ package com.lemongrass.lemongrass.Fragment;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.lemongrass.lemongrass.Activity.FoodSingle_Activity;
 import com.lemongrass.lemongrass.Adapter.Recyclerview_Adapter;
 import com.lemongrass.lemongrass.JSONParser;
@@ -24,13 +20,6 @@ import com.lemongrass.lemongrass.R;
 import com.lemongrass.lemongrass.Util.AppDb;
 import com.lemongrass.lemongrass.Util.ItemClickSupport;
 import com.lemongrass.lemongrass.Util.Utils;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,73 +78,5 @@ public class FromTheWok_Fragment extends Fragment
                 startActivity(in);
             }
         });
-
-        /*if(Utils.isNetworkConnectionAvailable(getActivity()))
-        {
-            new GetWok().execute();
-        }
-        else {
-            Toast.makeText(getActivity(),R.string.noNetwork,Toast.LENGTH_LONG).show();
-        }*/
-
     }
-
-    /*public class GetWok extends AsyncTask<String,String,String>
-    {
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            adapter = new Recyclerview_Adapter(getActivity(),list);
-            recyclerView.setAdapter(adapter);
-            progressDialog.dismiss();
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            progressDialog = new ProgressDialog(getActivity());
-            progressDialog.setTitle("Loading...");
-            progressDialog.setCancelable(false);
-            progressDialog.show();
-        }
-
-        @Override
-        protected String doInBackground(String... params) {
-
-            List<NameValuePair> param = new ArrayList<>();
-            param.add(new BasicNameValuePair("catid",catIdSt));
-            JSONObject jsonObject = jsonParser.makeHttpRequest(Utils.GET_MENU_URL,"GET",param);
-
-            Log.e("helloandroid",jsonObject.toString());
-
-            try {
-                if(jsonObject.getInt(Utils.SUCCESS)==1)
-                {
-                    JSONArray jArray = jsonObject.getJSONArray(Utils.DATA);
-                    Log.e("hello1",jArray.toString());
-
-                    ItemModel im;
-                    for(int i = 0;i <jArray.length();i++)
-                    {
-                        im = new ItemModel();
-                        JSONObject ob = jArray.getJSONObject(i);
-
-                        im.setImageUrl(ob.getString(Utils.IMAGE_URL));
-                        im.setDescription(ob.getString(Utils.DESCRIPTION));
-                        im.setItemName(ob.getString(Utils.ITEM_NAME));
-                        im.setMenuGroup(ob.getString(Utils.MENU_GROUP));
-                        im.setMenuId(ob.getString(Utils.MENU_ID));
-                        im.setPrice(ob.getString(Utils.PRICE));
-
-                        list.add(im);
-                    }
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-
-            return null;
-        }
-    }*/
 }

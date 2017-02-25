@@ -61,43 +61,6 @@ public class RiceNNoodles_Fragment extends Fragment
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        Log.e("fragRice","onAttach");
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        Log.e("fragRice","onAttach Activity");
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        Log.e("fragRice","onDestroy");
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        Log.e("fragRice","onDetach");
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.e("fragRice","onDestroy");
-    }
-
-    @Override
-    public void onLowMemory() {
-        super.onLowMemory();
-        Log.e("fragRice","onLowMemory");
-    }
-
-
-    @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         jsonParser = new JSONParser();
@@ -127,73 +90,5 @@ public class RiceNNoodles_Fragment extends Fragment
                 startActivity(in);
             }
         });
-
-        /*if(Utils.isNetworkConnectionAvailable(getActivity()))
-        {
-            new GetRiceNnoodels().execute();
-        }
-        else {
-            Toast.makeText(getActivity(),R.string.noNetwork,Toast.LENGTH_LONG).show();
-        }*/
-
     }
-
-    /*public class GetRiceNnoodels extends AsyncTask<String,String,String>
-    {
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            adapter = new Recyclerview_Adapter(getActivity(),list);
-            recyclerView.setAdapter(adapter);
-            progressDialog.dismiss();
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            progressDialog = new ProgressDialog(getActivity());
-            progressDialog.setTitle("Loading...");
-            progressDialog.setCancelable(false);
-            progressDialog.show();
-        }
-
-        @Override
-        protected String doInBackground(String... params) {
-
-            List<NameValuePair> param = new ArrayList<>();
-            param.add(new BasicNameValuePair("catid",catIdSt));
-            JSONObject jsonObject = jsonParser.makeHttpRequest(Utils.GET_MENU_URL,"GET",param);
-
-            Log.e("helloandroid",jsonObject.toString());
-
-            try {
-                if(jsonObject.getInt(Utils.SUCCESS)==1)
-                {
-                    JSONArray jArray = jsonObject.getJSONArray(Utils.DATA);
-                    Log.e("hello1",jArray.toString());
-
-                    ItemModel im;
-                    for(int i = 0;i <jArray.length();i++)
-                    {
-                        im = new ItemModel();
-                        JSONObject ob = jArray.getJSONObject(i);
-
-                        im.setImageUrl(ob.getString(Utils.IMAGE_URL));
-                        im.setDescription(ob.getString(Utils.DESCRIPTION));
-                        im.setItemName(ob.getString(Utils.ITEM_NAME));
-                        im.setMenuGroup(ob.getString(Utils.MENU_GROUP));
-                        im.setMenuId(ob.getString(Utils.MENU_ID));
-                        im.setPrice(ob.getString(Utils.PRICE));
-
-                        list.add(im);
-                    }
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-
-            return null;
-        }
-    }*/
 }

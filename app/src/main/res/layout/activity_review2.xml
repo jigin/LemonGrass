@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/reviewTitle"
+        android:background="#35403a3a">
+
+        <ImageView
+            android:id="@+id/fdBackicon"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/back_icon1"
+            android:gravity="center"
+            android:layout_width="40dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="We Care For Your Feedback"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/reviewTitleSize" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="30dp"
+                android:weightSum="8">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Would You Recommend Us ?"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textSize" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="horizontal"
+                        android:weightSum="6">
+
+                        <CheckBox
+                            android:id="@+id/r2checkbox1"
+                            android:layout_width="wrap_content"
+                            android:button="@drawable/custom_checkbox"
+                            android:layout_height="wrap_content"
+                            android:text="Yes"
+                            android:padding="5dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="15dp"
+                            android:textSize="@dimen/textSize"
+                            android:textColor="#8e8d8d"
+                            />
+                        <CheckBox
+                            android:id="@+id/r2checkbox2"
+                            android:layout_width="wrap_content"
+                            android:button="@drawable/custom_checkbox"
+                            android:layout_height="wrap_content"
+                            android:text="No"
+                            android:layout_weight="1"
+                            android:paddingLeft="15dp"
+                            android:textSize="@dimen/textSize"
+                            android:textColor="#8e8d8d"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="How Did You Hear From Us ?"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textSize" />
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:background="@drawable/whitebar"
+                        android:hint="Your Name *"
+                        android:paddingLeft="30dp"
+                        android:textColorHint="#8e8d8d"
+                        android:textSize="30sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:weightSum="5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:paddingLeft="15dp"
+                        android:gravity="left|center"
+                        android:text="Anything to add?"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textSize" />
+
+                    <EditText
+                        android:id="@+id/r2anytingAdd"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
+                        android:background="@drawable/green"
+                        android:padding="30dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:textColorHint="#8e8d8d"
+                        android:textSize="@dimen/textSize"
+                        android:inputType="text" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:gravity="left|center"
+                        android:textStyle="bold"
+                        android:text="Would you like us to subscribe to our newsletter?"
+                        android:textColor="#8e8d8d"
+                        android:textSize="@dimen/textSize"
+                        android:id="@+id/textView6" />
+
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:paddingLeft="15dp"
+                        android:text="Don't worry,your data is safe with us and only be used by our marketing team to share with you relevant information about our product and services."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:weightSum="3">
+
+                    <CheckBox
+                        android:id="@+id/r2checkbox3"
+                        android:layout_width="wrap_content"
+                        android:button="@drawable/custom_checkbox"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:padding="5dp"
+                        android:layout_weight=".1"
+                        android:paddingLeft="15dp"
+                        android:textSize="@dimen/textSize"
+                        android:textColor="#8e8d8d"
+                        />
+                    <CheckBox
+                        android:id="@+id/r2checkbox4"
+                        android:layout_width="wrap_content"
+                        android:button="@drawable/custom_checkbox"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        android:layout_weight=".1"
+                        android:paddingLeft="15dp"
+                        android:textSize="@dimen/textSize"
+                        android:textColor="#8e8d8d"
+                        />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/review2_send"
+                    android:text="Send"
+                    android:background="@drawable/button_drawable"
+                    android:layout_width="200dp"
+                    android:gravity="center"
+                    android:textSize="@dimen/textSize"
+                    android:textColor="#ffffff"
+                    android:layout_weight=".85"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"/>
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</LinearLayout>

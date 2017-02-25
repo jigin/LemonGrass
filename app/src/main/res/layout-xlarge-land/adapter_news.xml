@@ -1,88 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="230dp"
+    android:padding="10dp"
+    android:background="@drawable/news_bg_white_bar"
     android:orientation="horizontal"
-    android:layout_gravity="center"
-    android:background="@drawable/news_drawable"
-    android:weightSum="6"
-    android:layout_width="450dp"
-    android:layout_height="150dp">
+    android:weightSum="6">
 
     <LinearLayout
-        android:layout_weight="1"
-        android:layout_gravity="center"
         android:layout_width="0dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight=".5"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:layout_gravity="center">
-            <TextView
-                android:gravity="center"
-                android:text="15"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:gravity="center"
-                android:text="Feb"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:gravity="center"
-                android:text="2017"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:text="15"
+            android:textColor="#ffffff"
+            android:textSize="42sp" />
+
+        <TextView
+            android:id="@+id/tv_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="FEB"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="2017"
+            android:textSize="23sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_weight="2"
-        android:background="@color/colorPrimary"
         android:layout_width="0dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:orientation="vertical">
+
         <ImageView
-            android:scaleType="centerCrop"
+            android:id="@+id/im_news_thumbnail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/menupageicons" />
+            android:scaleType="fitXY"
+            android:src="@drawable/menupageicons" />
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_margin="20dp"
-        android:layout_weight="3"
+    <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:padding="10dp">
+
         <TextView
-            android:id="@+id/textView10"
-            android:textAllCaps="true"
-            android:text="shortlisted in the abu dhabi time out 2016 awards"
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SHORTLISTED IN THE ABU DHABI TIMEOUT 2016 AWARDS"
+            android:textSize="28sp"
             android:maxLines="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Vegitable spring rolls marinated chicken in pandan leaf, glass noodle salad with minced chicken."
+            android:textSize="25sp" />
 
         <Button
-            android:background="@drawable/button_drawable"
-            android:text="View More"
-            android:layout_width="wrap_content"
+            android:id="@+id/btn_news_viewmore"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-        <TextView
-            android:text="Vegitable spring rolls marianated"
-            android:maxLines="2"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView10"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-    </RelativeLayout>
+            android:layout_marginTop="40dp"
+            android:background="@color/colorPrimary"
+            android:text="View More"
+            android:textColor="#ffffff" />
+    </LinearLayout>
 
 
 </LinearLayout>

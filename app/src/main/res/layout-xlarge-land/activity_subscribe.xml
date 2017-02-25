@@ -61,7 +61,7 @@
                 android:id="@+id/sub_button"
                 android:layout_gravity="center"
                 android:background="@color/colorPrimary"
-                android:text="Sign up"
+                android:text="Subscribe"
                 android:layout_width="260dp"
                 android:layout_height="wrap_content" />
         </LinearLayout>

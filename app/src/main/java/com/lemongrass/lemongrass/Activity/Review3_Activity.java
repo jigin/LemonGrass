@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
@@ -15,20 +14,18 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.lemongrass.lemongrass.JSONParser;
+import com.lemongrass.lemongrass.Model.ReviewModel;
 import com.lemongrass.lemongrass.R;
+import com.lemongrass.lemongrass.Util.AppDb;
 import com.lemongrass.lemongrass.Util.Utils;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +41,8 @@ public class Review3_Activity extends Activity
     String recomnt="Yes",subscribe="Yes",anythingAdd="",uForm="";
     ImageView backIcon;
     EditText anyAdd;
+
+    AppDb db;
 
     JSONParser jsonParser;
 
@@ -93,12 +92,39 @@ public class Review3_Activity extends Activity
 
                     gettingShared();
 
-                    if(Utils.isNetworkConnectionAvailable(getApplicationContext()))
+                    if(Utils.isNetworkAvailable(getApplicationContext()))
                     {
                         new SendReview().execute();
                     }
                     else {
-                        Toast.makeText(getApplicationContext(),R.string.noNetwork,Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(),R.string.noNetwork,Toast.LENGTH_LONG).show();
+
+                        /*ReviewModel rm = new ReviewModel();
+                        rm.setName(name);
+                        rm.setMob(mobno);
+                        rm.setEmail(email);
+                        rm.setOutlet(outlet);
+                        rm.setOrder(ty_order);
+                        rm.setTime(time);
+                        rm.setRecomnt(recommnt);
+                        rm.setFstar(fstar);
+                        rm.setSstar(sstar);
+                        rm.setAstar(astar);
+                        rm.setHear(hear);
+                        rm.setAdd(add);
+                        rm.setSubscibe(subscribe1);
+                        rm.setSource("Mobile");
+                        long flag = db.insertReview(rm);*/
+
+                        long flag = saveToInternal();
+
+                        if(flag>0)
+                        {
+                            showDialog();
+                        }
+                        else {
+
+                        }
                     }
 
                 }
@@ -142,6 +168,8 @@ public class Review3_Activity extends Activity
     }
     void setUIElements()
     {
+        db = new AppDb(this);
+
         jsonParser = new JSONParser();
 
         sendBt = (Button) findViewById(R.id.review2_send);
@@ -192,143 +220,206 @@ public class Review3_Activity extends Activity
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             progressDialog.dismiss();
-
-            /*Intent in = new Intent(getApplicationContext(),Home_Activity.class);
-            in.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(in);
-            finish();*/
         }
 
         @Override
-        protected String doInBackground(String... strings) {
+        protected String doInBackground(String... strings)
+        {
+            if (Utils.hasInternetConnection(getApplicationContext())) {
 
-/*
-            String ReviewUrl = "http://webqua.com/lemongrass/androidapi/setreview.php?name="+name+"&mobile="+mobno+"&email="+email+"&bvisited="+outlet+"&tvisited=null&tyvisited="+time+"&reco="+recommnt+"&fstar="+fstar+"&sstar="+sstar+"&astar="+astar+"&hfrom="+hear+"&desc="+add+"&subs="+subscribe1;
-*/
-            String ReviewUrl = "http://webqua.com/lemongrass/androidapi/setreview.php";
+                String ReviewUrl = "http://www.lemongrassrestaurants.com/androidapi/setreview.php";
 
-            Log.e("valuess",ReviewUrl);
+                List<NameValuePair> params = new ArrayList<>();
+                params.add(new BasicNameValuePair("name", name));
+                params.add(new BasicNameValuePair("mobile", mobno));
+                params.add(new BasicNameValuePair("email", email));
+                params.add(new BasicNameValuePair("bvisited", outlet));
+                params.add(new BasicNameValuePair("tyvisited", ty_order));
+                params.add(new BasicNameValuePair("tvisited", time));
+                params.add(new BasicNameValuePair("reco", recommnt));
+                params.add(new BasicNameValuePair("fstar", fstar));
+                params.add(new BasicNameValuePair("sstar", sstar));
+                params.add(new BasicNameValuePair("astar", astar));
+                params.add(new BasicNameValuePair("hfrom", hear));
+                params.add(new BasicNameValuePair("desc", add));
+                params.add(new BasicNameValuePair("subs", subscribe1));
+                params.add(new BasicNameValuePair("source", "Mobile"));
 
-            Log.e("review details : ",name);
-            Log.e("review details : ",mobno);
-            Log.e("review details : ",email);
-            Log.e("review details : ",outlet);
-            Log.e("review details : ",ty_order);
-            Log.e("review details : ",recommnt);
-            Log.e("review details : ",fstar);
-            Log.e("review details : ",sstar);
-            Log.e("review details : ",astar);
-            Log.e("review details : ",add);
-            Log.e("review details : ",subscribe1);
-
-
-            List<NameValuePair>params = new ArrayList<>();
-            params.add(new BasicNameValuePair("name",name));
-            params.add(new BasicNameValuePair("mobile",mobno));
-            params.add(new BasicNameValuePair("email",email));
-            params.add(new BasicNameValuePair("bvisited",outlet));
-            params.add(new BasicNameValuePair("tyvisited",ty_order));
-            params.add(new BasicNameValuePair("tvisited",time));
-            params.add(new BasicNameValuePair("reco",recommnt));
-            params.add(new BasicNameValuePair("fstar",fstar));
-            params.add(new BasicNameValuePair("sstar",sstar));
-            params.add(new BasicNameValuePair("astar",astar));
-            params.add(new BasicNameValuePair("hfrom",hear));
-            params.add(new BasicNameValuePair("desc",add));
-            params.add(new BasicNameValuePair("subs",subscribe1));
-            params.add(new BasicNameValuePair("source","Mobile"));
+            /*Log.e("params name::",name);
+            Log.e("params mobile::",mobno);
+            Log.e("params email::",email);
+            Log.e("params bvisited::",outlet);
+            Log.e("params tyvisited::",ty_order);
+            Log.e("params tvisited::",time);
+            Log.e("params reco::",recommnt);
+            Log.e("params fstar::",fstar);
+            Log.e("params sstar::",sstar);
+            Log.e("params astar::",astar);
+            Log.e("params hfrom::",hear);
+            Log.e("params desc::",add);
+            Log.e("params subs::",subscribe1);*/
 
 
-            JSONObject jsonObject = jsonParser.makeHttpRequest(ReviewUrl,"GET",params);
+                JSONObject jsonObject = jsonParser.makeHttpRequest(ReviewUrl, "GET", params);
 
-            Log.e("responceJson",jsonObject.toString());
+                //Log.e("responceJson", jsonObject.toString());
 
-            try {
-                if(jsonObject.getInt("success")==1)
-                {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            final Dialog dialog = new Dialog(Review3_Activity.this);
-                            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                            dialog.setContentView(R.layout.dialog_box);
+                try {
+                    if (jsonObject.getInt("success") == 1) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                showDialog();
+                            }
+                        });
+                    } else if (jsonObject.getInt("success") == 0) {
+                        /*ReviewModel rm = new ReviewModel();
+                        rm.setName(name);
+                        rm.setMob(mobno);
+                        rm.setEmail(email);
+                        rm.setOutlet(outlet);
+                        rm.setOrder(ty_order);
+                        rm.setTime(time);
+                        rm.setRecomnt(recommnt);
+                        rm.setFstar(fstar);
+                        rm.setSstar(sstar);
+                        rm.setAstar(astar);
+                        rm.setHear(hear);
+                        rm.setAdd(add);
+                        rm.setSubscibe(subscribe1);
+                        rm.setSource("Mobile");
+                        long flag = db.insertReview(rm);*/
 
-                            TextView title = (TextView) dialog.findViewById(R.id.dialogTitle);
-                            TextView name_d = (TextView) dialog.findViewById(R.id.dialogName);
-                            Button close = (Button) dialog.findViewById(R.id.dialogClose);
+                        long flag = saveToInternal();
 
-                            title.setText("Thank you for your time");
-                            name_d.setText(name);
-                            close.setOnClickListener(new View.OnClickListener() {
+                        if (flag > 0) {
+                            runOnUiThread(new Runnable() {
                                 @Override
-                                public void onClick(View view) {
-                                    dialog.dismiss();
-                                    Intent in = new Intent(getApplicationContext(),Home_Activity.class);
-                                    in.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                    startActivity(in);
+                                public void run() {
+                                    showDialog();
                                 }
                             });
-                            dialog.show();
+                        } else {
+
                         }
-                    });
-                }
-                else if(jsonObject.getInt("success")==0)
-                {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            final Dialog dialog = new Dialog(Review3_Activity.this);
-                            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                            dialog.setContentView(R.layout.dialog_box);
 
-                            TextView title = (TextView) dialog.findViewById(R.id.dialogTitle);
-                            TextView name_d = (TextView) dialog.findViewById(R.id.dialogName);
-                            Button close = (Button) dialog.findViewById(R.id.dialogClose);
+                    } else {
 
-                            title.setText(R.string.wentwrong);
-                            name_d.setText(name);
-                            close.setOnClickListener(new View.OnClickListener() {
+
+                        /*ReviewModel rm = new ReviewModel();
+                        rm.setName(name);
+                        rm.setMob(mobno);
+                        rm.setEmail(email);
+                        rm.setOutlet(outlet);
+                        rm.setOrder(ty_order);
+                        rm.setTime(time);
+                        rm.setRecomnt(recommnt);
+                        rm.setFstar(fstar);
+                        rm.setSstar(sstar);
+                        rm.setAstar(astar);
+                        rm.setHear(hear);
+                        rm.setAdd(add);
+                        rm.setSubscibe(subscribe1);
+                        rm.setSource("Mobile");
+                        long flag = db.insertReview(rm);*/
+
+                        long flag = saveToInternal();
+
+                        if (flag > 0) {
+                            runOnUiThread(new Runnable() {
                                 @Override
-                                public void onClick(View view) {
-                                    finish();
-                                    dialog.dismiss();
+                                public void run() {
+                                    showDialog();
                                 }
                             });
-                            dialog.show();
-                        }
-                    });
-                }
-                else {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            final Dialog dialog = new Dialog(Review3_Activity.this);
-                            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                            dialog.setContentView(R.layout.dialog_box);
+                        } else {
 
-                            TextView title = (TextView) dialog.findViewById(R.id.dialogTitle);
-                            TextView name_d = (TextView) dialog.findViewById(R.id.dialogName);
-                            Button close = (Button) dialog.findViewById(R.id.dialogClose);
-
-                            title.setText(R.string.wentwrong);
-                            name_d.setText(name);
-                            close.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
-                                    finish();
-                                    dialog.dismiss();
-                                }
-                            });
-                            dialog.show();
                         }
-                    });
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-            } catch (JSONException e) {
-                e.printStackTrace();
+
             }
+            else {
+                /*ReviewModel rm = new ReviewModel();
+                rm.setName(name);
+                rm.setMob(mobno);
+                rm.setEmail(email);
+                rm.setOutlet(outlet);
+                rm.setOrder(ty_order);
+                rm.setTime(time);
+                rm.setRecomnt(recommnt);
+                rm.setFstar(fstar);
+                rm.setSstar(sstar);
+                rm.setAstar(astar);
+                rm.setHear(hear);
+                rm.setAdd(add);
+                rm.setSubscibe(subscribe1);
+                rm.setSource("Mobile");
+                long flag = db.insertReview(rm);*/
 
+                long flag = saveToInternal();
 
+                if (flag > 0) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            showDialog();
+                        }
+                    });
+                } else {
+
+                }
+            }
             return null;
         }
+    }
+    public void showDialog()
+    {
+        final Dialog dialog = new Dialog(Review3_Activity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_box);
+
+        TextView title = (TextView) dialog.findViewById(R.id.dialogTitle);
+        TextView name_d = (TextView) dialog.findViewById(R.id.dialogName);
+        Button close = (Button) dialog.findViewById(R.id.dialogClose);
+
+        title.setText("Thank you for your time");
+        name_d.setText(name);
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                Intent in = new Intent(getApplicationContext(), Home_Activity.class);
+                in.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(in);
+            }
+        });
+        dialog.show();
+    }
+    public long saveToInternal()
+    {
+        long flag = 0;
+
+        ReviewModel rm = new ReviewModel();
+
+        rm.setName(name);
+        rm.setMob(mobno);
+        rm.setEmail(email);
+        rm.setOutlet(outlet);
+        rm.setOrder(ty_order);
+        rm.setTime(time);
+        rm.setRecomnt(recommnt);
+        rm.setFstar(fstar);
+        rm.setSstar(sstar);
+        rm.setAstar(astar);
+        rm.setHear(hear);
+        rm.setAdd(add);
+        rm.setSubscibe(subscribe1);
+        rm.setSource("Mobile");
+        flag = db.insertReview(rm);
+
+        return flag;
     }
 }

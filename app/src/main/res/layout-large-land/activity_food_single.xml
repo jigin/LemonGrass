@@ -84,6 +84,8 @@
                     android:id="@+id/itemNuti" />
 
                 <Button
+                    android:textSize="18dp"
+                    android:textColor="@color/white"
                     android:id="@+id/itemPrice"
                     android:layout_gravity="end"
                     android:layout_weight="1"

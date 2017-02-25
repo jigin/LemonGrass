@@ -1,34 +1,24 @@
 package com.lemongrass.lemongrass.Activity;
 
 import android.app.Activity;
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.icu.text.SimpleDateFormat;
-import android.icu.util.Calendar;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.DatePicker;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lemongrass.lemongrass.R;
 import com.lemongrass.lemongrass.Util.Utils;
 
-import java.util.Locale;
-
 /**
  * Created by AMAL SAJU VARGHESE on 11-Feb-17.
  */
 public class Review2_Activity extends Activity {
     Button nextBt;
-    //Spinner outlet;
     CheckBox lunch,dinner;
     TextView name,number,email;
     ImageView backIcon;
@@ -36,7 +26,7 @@ public class Review2_Activity extends Activity {
     SharedPreferences sharedPreferences;
     SharedPreferences pref;
 
-    String sName,sEmail,sNumber,sOutlet,t_visit = "Lunch",ty_order="Dine in";
+    String sName,sEmail,sNumber,t_visit = "Lunch";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,11 +41,6 @@ public class Review2_Activity extends Activity {
             }
         });
 
-        String []adapterString = getResources().getStringArray(R.array.outlet);
-        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,adapterString);
-
-        //outlet.setAdapter(adapter);
-
         lunch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,9 +48,6 @@ public class Review2_Activity extends Activity {
                 t_visit = "Lunch";
 
                 dinner.setChecked(false);
-                /*dinein.setChecked(false);
-                takeaway.setChecked(false);
-                delivery.setChecked(false);*/
 
             }
         });
@@ -76,47 +58,8 @@ public class Review2_Activity extends Activity {
                 t_visit = "Dinner";
 
                 lunch.setChecked(false);
-                /*dinein.setChecked(false);
-                takeaway.setChecked(false);
-                delivery.setChecked(false);*/
             }
         });
-        /*dinein.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dinein.setChecked(true);
-                ty_order = "Dine In";
-
-                *//*lunch.setChecked(false);
-                dinner.setChecked(false);*//*
-                takeaway.setChecked(false);
-                delivery.setChecked(false);
-            }
-        });
-        takeaway.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                takeaway.setChecked(true);
-                ty_order = "Take away";
-
-                *//*lunch.setChecked(false);
-                dinner.setChecked(false);*//*
-                dinein.setChecked(false);
-                delivery.setChecked(false);
-            }
-        });
-        delivery.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                delivery.setChecked(true);
-                ty_order = "Delivery";
-
-                *//*lunch.setChecked(false);
-                dinner.setChecked(false);*//*
-                dinein.setChecked(false);
-                takeaway.setChecked(false);
-            }
-        });*/
 
         nextBt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,7 +67,6 @@ public class Review2_Activity extends Activity {
                 sName = name.getText().toString();
                 sEmail = email.getText().toString();
                 sNumber = number.getText().toString();
-                //sOutlet = outlet.getSelectedItem().toString();
 
                 if(sName.equals(""))
                 {
@@ -141,18 +83,13 @@ public class Review2_Activity extends Activity {
                     email.requestFocus();
                     email.setError(Utils.errorText);
                 }
-                /*else if(sOutlet.equals("Select Outlet"))
+                else if(sEmail.contains(" "))
                 {
-                    //outlet.requestFocus();
-                    Toast.makeText(getApplicationContext(),"please select an outlet",Toast.LENGTH_SHORT).show();
-                }*/
+                    email.requestFocus();
+                    email.setError("No space allowed in email");
+                }
                 else
                 {
-                    /*Log.e("review2 name:",sName);
-                    Log.e("review2 email:",sEmail);
-                    Log.e("review2 number:",sNumber);
-                    Log.e("review2 outlet:",sOutlet);
-                    Log.e("review2 time:",t_visit);*/
                     pref = getSharedPreferences(Utils.PREF_NAME,MODE_PRIVATE);
                     String outletId = pref.getString(Utils.BRANCH_ID,"null");
 
@@ -169,9 +106,6 @@ public class Review2_Activity extends Activity {
                     Intent in = new Intent(getApplicationContext(),Review1_Activtiy.class);
                     startActivity(in);
                 }
-
-
-
             }
         });
     }
@@ -183,16 +117,10 @@ public class Review2_Activity extends Activity {
 
         nextBt = (Button) findViewById(R.id.review_next);
 
-        //outlet = (Spinner) findViewById(R.id.spinner);
-
         backIcon = (ImageView) findViewById(R.id.fdBackicon);
 
         lunch = (CheckBox) findViewById(R.id.r1_checkbox1);
         lunch.setChecked(true);
         dinner = (CheckBox) findViewById(R.id.r1_checkbox2);
-        /*dinein = (CheckBox) findViewById(R.id.r1_checkbox3);
-        dinein.setChecked(true);
-        takeaway = (CheckBox) findViewById(R.id.r1_checkbox4);
-        delivery = (CheckBox) findViewById(R.id.r1_checkbox5);*/
     }
 }

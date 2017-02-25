@@ -4,13 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
-import android.widget.Toast;
-
 import com.lemongrass.lemongrass.R;
 import com.lemongrass.lemongrass.Util.Utils;
 
@@ -158,14 +155,4 @@ public class Review1_Activtiy extends Activity {
         sadAmbience = (ImageView) findViewById(R.id.img_sad3);
 
     }
-
-    /*public void logShared()
-    {
-        SharedPreferences preferences = getSharedPreferences(Utils.PREF_NAME,MODE_PRIVATE);
-        Log.e("Pref."+Utils.RV_NAME,preferences.getString(Utils.RV_NAME,""));
-        Log.e("Pref."+Utils.RV_EMAIL,preferences.getString(Utils.RV_EMAIL,""));
-        Log.e("Pref."+Utils.RV_NO,preferences.getString(Utils.RV_NO,""));
-        Log.e("Pref."+Utils.RV_OUTLET,preferences.getString(Utils.RV_OUTLET,""));
-        Log.e("Pref."+Utils.RV_TIME_VISIT,preferences.getString(Utils.RV_TIME_VISIT,""));
-    }*/
 }

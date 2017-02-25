@@ -1,7 +1,6 @@
 package com.lemongrass.lemongrass.Fragment;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
@@ -10,10 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -23,25 +19,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.lemongrass.lemongrass.Activity.FoodSingle_Activity;
 import com.lemongrass.lemongrass.Adapter.Recyclerview_Adapter;
 import com.lemongrass.lemongrass.JSONParser;
 import com.lemongrass.lemongrass.Model.ItemModel;
 import com.lemongrass.lemongrass.R;
-import com.lemongrass.lemongrass.Updatable;
 import com.lemongrass.lemongrass.Util.ItemClickSupport;
 import com.lemongrass.lemongrass.Util.Utils;
-
 import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.jar.Manifest;
 
 /**
  * Created by AMAL SAJU VARGHESE on 09-Feb-17.
@@ -68,7 +58,6 @@ public class All_Fragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_all, container, false);
     }
 
@@ -98,7 +87,7 @@ public class All_Fragment extends Fragment
             }
         });
 
-        if(Utils.isNetworkConnectionAvailable(getActivity()))
+        if(Utils.isNetworkAvailable(getActivity()))
         {
             new GetAllFood().execute();
         }
@@ -126,7 +115,7 @@ public class All_Fragment extends Fragment
         {
             case PERMISSION_REQUEST_CODE:{
                 if(grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                    if(Utils.isNetworkConnectionAvailable(getActivity()))
+                    if(Utils.isNetworkAvailable(getActivity()))
                     {
                         new GetAllFood().execute();
                     }
@@ -164,39 +153,50 @@ public class All_Fragment extends Fragment
         @Override
         protected String doInBackground(String... params) {
 
-            List<NameValuePair>param = new ArrayList<>();
-            JSONObject jsonObject = jsonParser.makeHttpRequest(Utils.ALL_FOOD_URL,"POST",param);
+            if (Utils.hasInternetConnection(getActivity())) {
 
-            Log.e("helloandroid",jsonObject.toString());
+                List<NameValuePair> param = new ArrayList<>();
+                JSONObject jsonObject = jsonParser.makeHttpRequest(Utils.ALL_FOOD_URL, "POST", param);
 
-            try {
-                if(jsonObject.getInt(Utils.SUCCESS)==1)
-                {
-                    JSONArray jArray = jsonObject.getJSONArray(Utils.DATA);
-                    Log.e("hello1",jArray.toString());
+                //Log.e("helloandroid", jsonObject.toString());
 
-                    ItemModel im;
-                    for(int i = 0;i <jArray.length();i++)
-                    {
-                        im = new ItemModel();
-                        JSONObject ob = jArray.getJSONObject(i);
+                try {
+                    if (jsonObject.getInt(Utils.SUCCESS) == 1) {
+                        JSONArray jArray = jsonObject.getJSONArray(Utils.DATA);
+                        //Log.e("hello1", jArray.toString());
 
-                        im.setImageUrl(ob.getString(Utils.IMAGE_URL));
-                        im.setDescription(ob.getString(Utils.DESCRIPTION));
-                        im.setItemName(ob.getString(Utils.ITEM_NAME));
-                        im.setMenuGroup(ob.getString(Utils.MENU_GROUP));
-                        im.setMenuId(ob.getString(Utils.MENU_ID));
-                        im.setPrice(ob.getString(Utils.PRICE));
+                        ItemModel im;
+                        for (int i = 0; i < jArray.length(); i++) {
+                            im = new ItemModel();
+                            JSONObject ob = jArray.getJSONObject(i);
 
-                        list.add(im);
+                            im.setImageUrl(ob.getString(Utils.IMAGE_URL));
+                            im.setDescription(ob.getString(Utils.DESCRIPTION));
+                            im.setItemName(ob.getString(Utils.ITEM_NAME));
+                            im.setMenuGroup(ob.getString(Utils.MENU_GROUP));
+                            im.setMenuId(ob.getString(Utils.MENU_ID));
+                            im.setPrice(ob.getString(Utils.PRICE));
+
+                            list.add(im);
+                        }
                     }
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-            } catch (JSONException e) {
-                e.printStackTrace();
+
+
+
             }
-
-
+            else {
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getActivity(),R.string.networkDown,Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
             return null;
+
         }
     }
 }

@@ -1,39 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/news_drawable"
-    android:layout_gravity="center"
-    android:layout_width="450dp"
-    android:layout_height="100dp">
-
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="230dp"
+    android:padding="10dp"
+    android:background="@drawable/news_bg_white_bar"
+    android:orientation="horizontal"
+    android:weightSum="6">
 
     <LinearLayout
-        android:background="@color/black"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight=".5"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:text="15"
+            android:textColor="#ffffff"
+            android:textSize="42sp" />
+
+        <TextView
+            android:id="@+id/tv_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="FEB"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="2017"
+            android:textSize="23sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/im_news_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/menupageicons" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="4"
         android:orientation="vertical"
-        android:layout_width="100dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout2"></LinearLayout>
+        android:padding="10dp">
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:background="@color/colorPrimaryDark"
-        android:orientation="horizontal"
-        android:layout_width="120dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/linearLayout2"
-        android:layout_toRightOf="@+id/linearLayout2"></LinearLayout>
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SHORTLISTED IN THE ABU DHABI TIMEOUT 2016 AWARDS"
+            android:textSize="28sp"
+            android:maxLines="1"
 
-    <LinearLayout
-        android:background="@color/colorAccent"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/linearLayout3"
-        android:layout_toEndOf="@+id/linearLayout3"></LinearLayout>
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Vegitable spring rolls marinated chicken in pandan leaf, glass noodle salad with minced chicken."
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btn_news_viewmore"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="40dp"
+            android:background="@color/colorPrimary"
+            android:text="View More"
+            android:textColor="#ffffff" />
+    </LinearLayout>
 
 
-</RelativeLayout>
+</LinearLayout>

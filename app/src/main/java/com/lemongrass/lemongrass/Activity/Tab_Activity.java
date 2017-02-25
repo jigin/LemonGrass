@@ -4,7 +4,6 @@ package com.lemongrass.lemongrass.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -18,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 import com.lemongrass.lemongrass.Fragment.Curries_Fragment;
 import com.lemongrass.lemongrass.Fragment.Deserts_Fragment;
 import com.lemongrass.lemongrass.Fragment.FreshJuiceNColdTeas_Fragment;
@@ -30,6 +30,7 @@ import com.lemongrass.lemongrass.Fragment.StartersNSoups_Fragment;
 import com.lemongrass.lemongrass.Fragment.TeaNCoffee_Fragment;
 import com.lemongrass.lemongrass.Fragment.WaterNSodas;
 import com.lemongrass.lemongrass.R;
+import com.lemongrass.lemongrass.Util.Utils;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -44,14 +45,11 @@ public class Tab_Activity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    private String STARTERS_FRAGMENT = "starter_fragment";
-
     ViewPagerAdapter adapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*setContentView(R.layout.activity_icon_tabs);*/
         setContentView(R.layout.samplefoodhome);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -65,9 +63,6 @@ public class Tab_Activity extends AppCompatActivity {
                 finish();
             }
         });
-
-        /*getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);*/
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setOffscreenPageLimit(1);
@@ -94,8 +89,15 @@ public class Tab_Activity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 finish();
-                Intent in = new Intent(getApplicationContext(),GetAll.class);
-                startActivity(in);
+                if(Utils.isNetworkAvailable(getApplicationContext()))
+                {
+                    Intent in = new Intent(getApplicationContext(),GetAll.class);
+                    startActivity(in);
+                }
+                else {
+                    Toast.makeText(getApplicationContext(),R.string.networkDown,Toast.LENGTH_LONG).show();
+                }
+
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -108,7 +110,6 @@ public class Tab_Activity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         adapter = new ViewPagerAdapter(getSupportFragmentManager(),getApplicationContext());
-        //adapter.addFragment(new All_Fragment(), "ALL");
         adapter.addFragment(new StartersNSoups_Fragment(), "STARTER & SOUPS");
         adapter.addFragment(new Salads_Fragment(), "SALADS");
         adapter.addFragment(new RiceNNoodles_Fragment(), "RICE & NOODLES");

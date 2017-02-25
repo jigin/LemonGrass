@@ -33,4 +33,8 @@
 
     <string name="optionText">Sync Now</string>
 
+    <string name="networkDown">Connection Error!</string>
+
+    <string name="saved">Review saved.</string>
+
 </resources>

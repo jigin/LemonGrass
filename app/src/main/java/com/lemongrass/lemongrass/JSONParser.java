@@ -49,7 +49,7 @@ public class JSONParser {
                 HttpEntity httpEntity = httpResponse.getEntity();
                 is = httpEntity.getContent();
 
-                Log.e("helloandroidurl",url);
+                //Log.e("helloandroidurl",url);
              }
             else 
             	if(method == "GET"){
@@ -59,7 +59,7 @@ public class JSONParser {
                 url += "?" + paramString;
                 HttpGet httpGet = new HttpGet(url);
 
-                    Log.e("helloandroidurl",url);
+                    Log.e("sending Url",url);
 
                 HttpResponse httpResponse = httpClient.execute(httpGet);
                 HttpEntity httpEntity = httpResponse.getEntity();
@@ -85,13 +85,13 @@ public class JSONParser {
             json = sb.toString();
             //Log.e("Json ",  sb.toString());
         } catch (Exception e) {
-            Log.e("Buffer Error", "Error converting result " + e.toString());
+            //Log.e("Buffer Error", "Error converting result " + e.toString());
         } 
         // try parse the string to a JSON object
         try {
             jObj = new JSONObject(json);
         } catch (JSONException e) {
-            Log.e("JSON Parser", "Error parsing data " + e.toString());
+            //Log.e("JSON Parser", "Error parsing data " + e.toString());
         } 
         // return JSON String
         return jObj;
