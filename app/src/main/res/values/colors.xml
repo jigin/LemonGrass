@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#b5c825</color>
-    <color name="colorPrimaryDark">#bcd11d</color>
+    <color name="colorPrimary">#ca2581</color>
+    <color name="colorPrimaryDark">#e60080</color>
     <color name="colorAccent">#e9e979</color>
 
     <color name="grey">#a4a1a1</color>
@@ -13,4 +13,8 @@
     <color name="white">#FFF</color>
 
     <color name="black">#000</color>
+
+    <color name="whiteTrans">#c1ffffff</color>
+
+    <color name="reviewBg">#eaeaea</color>
 </resources>

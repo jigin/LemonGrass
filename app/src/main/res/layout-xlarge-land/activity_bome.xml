@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:background="@drawable/menubg1">
+    android:background="@drawable/loginbg">
 
     <RelativeLayout
         android:gravity="center"
@@ -18,7 +18,7 @@
             android:layout_width="500dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:src="@drawable/logowhite" />
+            android:src="@drawable/logogreen" />
         <!--<ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -65,6 +65,7 @@
             </LinearLayout>
 
             <Button
+                android:textColor="@color/white"
                 android:textAllCaps="false"
                 android:text="Menu"
                 android:layout_width="match_parent"
@@ -106,6 +107,7 @@
 
             </LinearLayout>
             <Button
+                android:textColor="@color/white"
                 android:textAllCaps="false"
                 android:text="Review"
                 android:layout_width="match_parent"
@@ -147,6 +149,7 @@
 
             </LinearLayout>
             <Button
+                android:textColor="@color/white"
                 android:textAllCaps="false"
                 android:text="Subscribe"
                 android:layout_width="match_parent"

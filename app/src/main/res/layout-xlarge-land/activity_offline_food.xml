@@ -5,7 +5,7 @@
 
     <ImageView
         android:layout_gravity="center"
-        android:src="@color/colorAccent"
+        android:src="@drawable/logogreen"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:id="@+id/imageView3" />

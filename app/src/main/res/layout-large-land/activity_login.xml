@@ -17,56 +17,63 @@
         android:src="@drawable/logogreen"
         android:id="@+id/imageView" />
 
-    <EditText
-        android:layout_width="350dp"
-        android:layout_height="60dp"
-        android:inputType="textPersonName"
-        android:hint="Username"
-        android:textColorHint="#3b3b3b"
-        android:drawableRight="@drawable/user"
-        android:layout_marginLeft="350dp"
-        android:layout_marginRight="350dp"
-        android:ems="10"
-        android:background="@drawable/input"
-        android:textSize="28sp"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
-        android:id="@+id/editText" />
-
-    <EditText
-        android:layout_width="350dp"
-        android:layout_height="60dp"
-        android:textColorHint="#3b3b3b"
-        android:inputType="textPassword"
-        android:hint="Password"
-        android:layout_marginTop="20dp"
-        android:drawableRight="@drawable/lock"
-        android:layout_marginLeft="350dp"
-        android:layout_marginRight="400dp"
-        android:ems="10"
-        android:background="@drawable/input"
-        android:textSize="28sp"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
-        android:id="@+id/et_pwd" />
-
-    <Button
-        android:layout_marginLeft="350dp"
-        android:layout_marginRight="350dp"
-        android:layout_width="350dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/submit2"
-        android:id="@+id/btn_login" />
-
-    <TextView
+    <LinearLayout
         android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:textColor="#000000"
-        android:textSize="28sp"
-        android:id="@+id/tv_login_frgtpwd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Forget password" />
+        android:padding="25dp"
+        android:background="@color/whiteTrans"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:inputType="textPersonName"
+            android:hint="Username"
+            android:textColorHint="#3b3b3b"
+            android:drawableRight="@drawable/user"
+            android:ems="10"
+            android:background="@drawable/input"
+            android:textSize="28sp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:id="@+id/editText" />
+
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:textColorHint="#3b3b3b"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:layout_marginTop="20dp"
+            android:drawableRight="@drawable/lock"
+
+            android:ems="10"
+            android:background="@drawable/input"
+            android:textSize="28sp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:id="@+id/et_pwd" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/submit2" />
+
+        <!--<TextView
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:textColor="#000000"
+            android:textSize="28sp"
+            android:id="@+id/tv_login_frgtpwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forget password" />-->
+
+    </LinearLayout>
+
+
 </LinearLayout>
